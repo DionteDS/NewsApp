@@ -17,22 +17,59 @@ class NewsViewController: UIViewController {
     
     
     // Properties
-    var newsTopics: [String: String] = [String: String]()
+    let baseURLForTopHeadLines = "https://newsapi.org/v2/top-headlines"
+    var newsTopics: [[String: Any]] = [[String: Any]]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Top Headlines"
 
         // Create nib for news tableViewCell
         // And register the nib
         let nib = UINib(nibName: "NewsTableViewCell", bundle: nil)
         newsTableView.register(nib, forCellReuseIdentifier: "newsCell")
         
+        setQuery()
+        
     }
     
+    //MARK: - Networking Functions
     
     func setQuery() {
         
+        let params: [String: String] = ["country": "us", "apiKey": APIKEY, "pageSize": "10"]
+        
+        fetchData(url: baseURLForTopHeadLines, parameters: params)
+        
+    }
+    
+    func fetchData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            
+            if let responseValue = response.result.value as! [String: Any]? {
+                if let responseNewsTopics = responseValue["articles"] as! [[String: Any]]? {
+//                    print(responseNewsTopics)
+                    self.newsTopics = responseNewsTopics
+                    self.newsTableView.reloadData()
+                }
+                
+            }
+            
+//            if response.result.isSuccess {
+//                print("Got Data")
+//                print(JSON(response.result.value!))
+//
+//                let jsonData: JSON = JSON(response.result.value!)
+//
+//
+//            } else {
+//                print("Error \(response.error!)")
+//            }
+            
+        }
         
     }
 
@@ -43,16 +80,22 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return newsTopics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
         
-        cell.newsTitle.text = "Title"
-        cell.newsSource.text = "Source"
-        cell.newsImg.image = UIImage(named: "newsImage")
+        // Store each news article
+        let eachArticle = self.newsTopics[indexPath.row]
+        
+        // Get the source name
+        let eachSource = eachArticle["source"] as! [String: Any]
+        
+        // Display the title and source in the cell labels
+        cell.newsTitle.text = (eachArticle["title"] as? String ?? "")
+        cell.newsSource.text = (eachSource["name"] as? String ?? "")
         
         return cell
         
