@@ -17,6 +17,7 @@
 		424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D623DD6094009A3815 /* NewsViewController.swift */; };
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
+		424A02DE23DD670A009A3815 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02DD23DD670A009A3815 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		424A02D623DD6094009A3815 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		424A02DD23DD670A009A3815 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		486532D316927D37185457B7 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				420A8A6D23DD4D9C007913F3 /* Assets.xcassets */,
 				420A8A6F23DD4D9C007913F3 /* LaunchScreen.storyboard */,
 				420A8A7223DD4D9C007913F3 /* Info.plist */,
+				424A02DD23DD670A009A3815 /* Keys.swift */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				420A8A6923DD4D9B007913F3 /* WelcomeController.swift in Sources */,
+				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
 				420A8A6723DD4D9B007913F3 /* SceneDelegate.swift in Sources */,

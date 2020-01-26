@@ -31,7 +31,10 @@ class NewsViewController: UIViewController {
     }
     
     
-    
+    func setQuery() {
+        
+        
+    }
 
 }
 
