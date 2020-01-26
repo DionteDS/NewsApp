@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome Controller-->
         <scene sceneID="Rrc-VJ-zCz">
             <objects>
-                <viewController id="hxj-tj-7Dv" customClass="ViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hxj-tj-7Dv" customClass="WelcomeController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G6W-KT-kn3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,17 +79,62 @@
             </objects>
             <point key="canvasLocation" x="946" y="122"/>
         </scene>
-        <!--View Controller-->
+        <!--News View Controller-->
         <scene sceneID="e9k-rw-vdt">
             <objects>
-                <viewController id="RmE-Ms-UZ8" sceneMemberID="viewController">
+                <viewController id="RmE-Ms-UZ8" customClass="NewsViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Fi-fp-Mop">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m32-mI-uc2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="kAg-kQ-1Wq" detailTextLabel="838-gn-vnK" style="IBUITableViewCellStyleSubtitle" id="Fzu-ii-VzL">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fzu-ii-VzL" id="WBH-2n-bGy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kAg-kQ-1Wq">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="838-gn-vnK">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RmE-Ms-UZ8" id="f1l-MW-etD"/>
+                                    <outlet property="delegate" destination="RmE-Ms-UZ8" id="RHw-uH-5ih"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="m32-mI-uc2" firstAttribute="leading" secondItem="btd-cB-2bc" secondAttribute="leading" id="4KC-or-EPd"/>
+                            <constraint firstItem="m32-mI-uc2" firstAttribute="top" secondItem="btd-cB-2bc" secondAttribute="top" id="FM8-1f-Cp9"/>
+                            <constraint firstItem="btd-cB-2bc" firstAttribute="bottom" secondItem="m32-mI-uc2" secondAttribute="bottom" id="McO-qX-A6s"/>
+                            <constraint firstItem="btd-cB-2bc" firstAttribute="trailing" secondItem="m32-mI-uc2" secondAttribute="trailing" id="nnp-Xf-HJM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="btd-cB-2bc"/>
                     </view>
                     <navigationItem key="navigationItem" id="UHT-6b-AhL"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="m32-mI-uc2" id="zkN-LT-Wfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGI-b2-D7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
