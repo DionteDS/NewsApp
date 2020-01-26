@@ -18,6 +18,7 @@
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
 		424A02DE23DD670A009A3815 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02DD23DD670A009A3815 /* Keys.swift */; };
+		42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		424A02DD23DD670A009A3815 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoViewController.swift; sourceTree = "<group>"; };
 		486532D316927D37185457B7 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			children = (
 				420A8A6823DD4D9B007913F3 /* WelcomeController.swift */,
 				424A02D623DD6094009A3815 /* NewsViewController.swift */,
+				42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
+				42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */,
 				420A8A6723DD4D9B007913F3 /* SceneDelegate.swift in Sources */,
 				424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */,
 			);

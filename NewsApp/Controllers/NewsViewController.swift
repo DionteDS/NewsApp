@@ -19,6 +19,7 @@ class NewsViewController: UIViewController {
     // Properties
     let baseURLForTopHeadLines = "https://newsapi.org/v2/top-headlines"
     var newsTopics: [[String: Any]] = [[String: Any]]()
+    var row = 0
     
 
     override func viewDidLoad() {
@@ -52,6 +53,7 @@ class NewsViewController: UIViewController {
             if let responseValue = response.result.value as! [String: Any]? {
                 if let responseNewsTopics = responseValue["articles"] as! [[String: Any]]? {
 //                    print(responseNewsTopics)
+                    
                     self.newsTopics = responseNewsTopics
                     self.newsTableView.reloadData()
                 }
@@ -108,12 +110,38 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    // Select a news article to gets info
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Get the selected news article indexPath row
+        if let rowIndex = tableView.indexPathForSelectedRow?.row {
+            row = rowIndex
+        }
+        
+        performSegue(withIdentifier: "newsInfo", sender: self)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
     // Row height for cells
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 141
     }
     
-    
+    // Prepare the contents for the NewsInfoViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "newsInfo" {
+            let controller = segue.destination as! NewsInfoViewController
+            
+            // Grab the selected news article url
+            let eachArticle = newsTopics[row]
+            let newsURLString = (eachArticle["url"] as? String ?? "")
+            controller.webURLString = newsURLString
+        }
+        
+    }
     
     
 }
