@@ -58,17 +58,6 @@ class NewsViewController: UIViewController {
                 
             }
             
-//            if response.result.isSuccess {
-//                print("Got Data")
-//                print(JSON(response.result.value!))
-//
-//                let jsonData: JSON = JSON(response.result.value!)
-//
-//
-//            } else {
-//                print("Error \(response.error!)")
-//            }
-            
         }
         
     }
@@ -96,6 +85,24 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         // Display the title and source in the cell labels
         cell.newsTitle.text = (eachArticle["title"] as? String ?? "")
         cell.newsSource.text = (eachSource["name"] as? String ?? "")
+        
+        // Get the image for the article
+        if let imageURL = eachArticle["urlToImage"] as? String {
+            Alamofire.request(imageURL).responseImage { (response) in
+                if let image = response.result.value {
+                    // Scale the image to 100 x 100
+                    // With an Aspect Scaled Fill
+                    let size = CGSize(width: 100, height: 100)
+                    let scaledImage = image.af_imageAspectScaled(toFill: size)
+                    // Set image on main thread
+                    DispatchQueue.main.async {
+                        cell.newsImg.image = scaledImage
+                    }
+                } else {
+                    print(response.error!)
+                }
+            }
+        }
         
         return cell
         
