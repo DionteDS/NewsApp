@@ -107,6 +107,9 @@
                         <viewLayoutGuide key="safeArea" id="dEd-Mr-h2D"/>
                     </view>
                     <navigationItem key="navigationItem" id="9zn-Ml-Ncq"/>
+                    <connections>
+                        <outlet property="businessTableView" destination="yTB-CZ-oy5" id="aNg-Um-8r5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2K-8p-IbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

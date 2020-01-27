@@ -12,9 +12,12 @@ import AlamofireImage
 
 class BusinessHeadlinesViewController: UIViewController {
     
+    @IBOutlet weak var businessTableView: UITableView!
+    
+    
     let baseURL = "https://newsapi.org/v2/top-headlines"
     
-    private var businessHeadlines: [String: String] = [String: String]()
+    private var businessHeadlines: [[String: Any]] = [[String: Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +39,8 @@ class BusinessHeadlinesViewController: UIViewController {
             
             if let responseValue = response.result.value as! [String: Any]? {
                 if let responseNews = responseValue["articles"] as! [[String: Any]]? {
-                    print(responseNews)
-                    
+                    self.businessHeadlines = responseNews
+                    self.businessTableView.reloadData()
                 }
                 
             } else {
