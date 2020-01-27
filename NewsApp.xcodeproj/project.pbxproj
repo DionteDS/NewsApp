@@ -13,6 +13,7 @@
 		420A8A6C23DD4D9B007913F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6A23DD4D9B007913F3 /* Main.storyboard */; };
 		420A8A6E23DD4D9C007913F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6D23DD4D9C007913F3 /* Assets.xcassets */; };
 		420A8A7123DD4D9C007913F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6F23DD4D9C007913F3 /* LaunchScreen.storyboard */; };
+		42140A7023DE90990082B35A /* Headlines.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42140A6F23DE90990082B35A /* Headlines.storyboard */; };
 		424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D623DD6094009A3815 /* NewsViewController.swift */; };
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
@@ -30,6 +31,7 @@
 		420A8A6D23DD4D9C007913F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		420A8A7023DD4D9C007913F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		420A8A7223DD4D9C007913F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42140A6F23DE90990082B35A /* Headlines.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Headlines.storyboard; sourceTree = "<group>"; };
 		424A02D623DD6094009A3815 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -82,8 +84,7 @@
 			children = (
 				420A8A6423DD4D9B007913F3 /* AppDelegate.swift */,
 				420A8A6623DD4D9B007913F3 /* SceneDelegate.swift */,
-				424A02D823DD624C009A3815 /* Custom Cell */,
-				424A02D523DD605B009A3815 /* Controllers */,
+				42140A6E23DE90800082B35A /* Top Headlines */,
 				424A02D423DD6053009A3815 /* Views */,
 				420A8A6D23DD4D9C007913F3 /* Assets.xcassets */,
 				420A8A6F23DD4D9C007913F3 /* LaunchScreen.storyboard */,
@@ -93,21 +94,39 @@
 			path = NewsApp;
 			sourceTree = "<group>";
 		};
-		424A02D423DD6053009A3815 /* Views */ = {
+		42140A6E23DE90800082B35A /* Top Headlines */ = {
 			isa = PBXGroup;
 			children = (
-				420A8A6A23DD4D9B007913F3 /* Main.storyboard */,
+				424A02D823DD624C009A3815 /* Custom Cell */,
+				42140A7223DE92380082B35A /* Controllers */,
+				42140A7123DE922C0082B35A /* Views */,
+			);
+			path = "Top Headlines";
+			sourceTree = "<group>";
+		};
+		42140A7123DE922C0082B35A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42140A6F23DE90990082B35A /* Headlines.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		424A02D523DD605B009A3815 /* Controllers */ = {
+		42140A7223DE92380082B35A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				424A02D623DD6094009A3815 /* NewsViewController.swift */,
 				42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		424A02D423DD6053009A3815 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				420A8A6A23DD4D9B007913F3 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		424A02D823DD624C009A3815 /* Custom Cell */ = {
@@ -187,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42140A7023DE90990082B35A /* Headlines.storyboard in Resources */,
 				420A8A7123DD4D9C007913F3 /* LaunchScreen.storyboard in Resources */,
 				420A8A6E23DD4D9C007913F3 /* Assets.xcassets in Resources */,
 				424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */,
