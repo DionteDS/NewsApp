@@ -30,7 +30,7 @@ class CategoriesViewController: UIViewController {
     }
     
     // Setup the flowlayout for the collectionViewCells
-    func setupLayout() {
+    private func setupLayout() {
         
         let padding: CGFloat = 30
         let collectionViewSize = categoryCollectionView.frame.size.width - padding
@@ -71,11 +71,26 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        // Store the row index for the selected indexPath
         if let rowIndex = collectionView.indexPathsForSelectedItems?.first {
             row = rowIndex.item
         }
         
-        print(categories[row])
+        performSegue(withIdentifier: "goToBusinessController", sender: self)
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+    }
+    
+    
+    // Prepare data to be sent over
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToBusinessController" {
+            let controller = segue.destination as! BusinessHeadlinesViewController
+            
+            controller.setQuery(category: categories[row])
+        }
         
     }
     

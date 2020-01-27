@@ -11,11 +11,61 @@ import Alamofire
 import AlamofireImage
 
 class BusinessHeadlinesViewController: UIViewController {
+    
+    let baseURL = "https://newsapi.org/v2/top-headlines"
+    
+    private var businessHeadlines: [String: String] = [String: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    //MARK: - Networking calls
+    
+    public func setQuery(category: String) {
+        
+        let params: [String: String] = ["apiKey": APIKEY, "category": category, "country": "us", "pageSize": "10"]
+        
+        fetchData(url: baseURL, parameters: params)
+    }
+    
+    private func fetchData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            
+            if let responseValue = response.result.value as! [String: Any]? {
+                if let responseNews = responseValue["articles"] as! [[String: Any]]? {
+                    print(responseNews)
+                    
+                }
+                
+            } else {
+                print(response.error!)
+            }
+            
+        }
+        
+    }
+}
 
+
+//MARK: - TableView Delegate and DataSource Methods
+
+extension BusinessHeadlinesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        return cell
+        
+    }
+    
+    
 }
