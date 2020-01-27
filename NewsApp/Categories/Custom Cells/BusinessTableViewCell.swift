@@ -9,6 +9,11 @@
 import UIKit
 
 class BusinessTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var newsImg: UIImageView!
+    @IBOutlet weak var newsTitle: UILabel!
+    @IBOutlet weak var newsSource: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
