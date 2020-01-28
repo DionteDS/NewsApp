@@ -25,6 +25,8 @@
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
 		424A02DE23DD670A009A3815 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02DD23DD670A009A3815 /* Keys.swift */; };
+		42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */; };
+		42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */; };
 		42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		424A02DD23DD670A009A3815 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCell+Design.swift"; sourceTree = "<group>"; };
+		42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Design.swift"; sourceTree = "<group>"; };
 		42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoViewController.swift; sourceTree = "<group>"; };
 		486532D316927D37185457B7 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +143,7 @@
 		42140A7323DE95B30082B35A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				42521EA323E0D96700BDA595 /* Extenstions */,
 				42140A7A23DE9A4C0082B35A /* Custom Cells */,
 				42140A7723DE99430082B35A /* Controllers */,
 				42140A7423DE95BE0082B35A /* Views */,
@@ -189,6 +194,15 @@
 				424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */,
 			);
 			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		42521EA323E0D96700BDA595 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */,
+				42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */,
+			);
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		4EA553EC9A1CE5DBC11F7A45 /* Frameworks */ = {
@@ -320,9 +334,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				42140A8023DEB4B40082B35A /* BusinessHeadlinesViewController.swift in Sources */,
+				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
+				42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */,
 				42140A7D23DE9A650082B35A /* CustomCollectionViewCell.swift in Sources */,
 				42140A8323DEBA910082B35A /* BusinessTableViewCell.swift in Sources */,
 				42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */,

@@ -25,12 +25,20 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barTintColor = UIColor.gray
+        view.backgroundColor = UIColor.gray
+        newsTableView.backgroundColor = UIColor.gray
+        
         navigationItem.title = "Top Headlines"
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
         // Create nib for news tableViewCell
         // And register the nib
         let nib = UINib(nibName: "NewsTableViewCell", bundle: nil)
         newsTableView.register(nib, forCellReuseIdentifier: "newsCell")
+        
+        newsTableView.separatorStyle = .none
         
         setQuery()
         
@@ -77,6 +85,9 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
+        
+        cell.customDesign()
+        
         
         // Store each news article
         let eachArticle = self.newsTopics[indexPath.row]

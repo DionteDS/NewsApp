@@ -20,6 +20,10 @@ class CategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.gray
+        navigationController?.navigationBar.barTintColor = UIColor.gray
+        categoryCollectionView.backgroundColor = UIColor.gray
 
         // Create nib and register it to the categoryCeollectionView
         let nib = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
@@ -36,8 +40,8 @@ class CategoriesViewController: UIViewController {
         let collectionViewSize = categoryCollectionView.frame.size.width - padding
         
         layout.itemSize = CGSize(width: collectionViewSize / 2, height: collectionViewSize / 2)
-        layout.minimumLineSpacing = 5.0
-        layout.minimumInteritemSpacing = 5.0
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 0, right: 10)
         layout.scrollDirection = .vertical
         
@@ -61,6 +65,7 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CustomCollectionViewCell
         
+        cell.designBorderBackground()
         
         cell.contentView.backgroundColor = .red
         cell.categoryTitle.text = categories[indexPath.item]
