@@ -26,4 +26,12 @@ class NewsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // Set the spacing for the tableViewCell
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let margins = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        contentView.frame = contentView.frame.inset(by: margins)
+    }
+    
 }

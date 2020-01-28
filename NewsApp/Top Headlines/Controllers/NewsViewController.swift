@@ -77,7 +77,6 @@ class NewsViewController: UIViewController {
 // MARK: - TableView Delegate and DataSource Methods
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsTopics.count
     }
@@ -86,8 +85,12 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
         
+        // Call customDesign to set the border for each cell
         cell.customDesign()
         
+        // Set the label colors to white
+        cell.newsSource.textColor = UIColor.white
+        cell.newsTitle.textColor = UIColor.white
         
         // Store each news article
         let eachArticle = self.newsTopics[indexPath.row]
