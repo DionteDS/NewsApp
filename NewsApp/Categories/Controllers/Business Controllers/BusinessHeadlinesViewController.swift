@@ -22,19 +22,24 @@ class BusinessHeadlinesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Navigation bar setup
-        navigationItem.title = "Business"
-        
-        navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+       
         view.backgroundColor = UIColor.gray
+        
+        setupNavBar()
         
         let nib = UINib(nibName: "BusinessTableViewCell", bundle: nil)
         businessTableView.register(nib, forCellReuseIdentifier: "businessCell")
         businessTableView.backgroundColor = UIColor.gray
         businessTableView.separatorStyle = .none
         
+    }
+    
+    private func setupNavBar() {
+        // Navigation bar setup
+       navigationItem.title = "Business"
+       
+       navigationItem.largeTitleDisplayMode = .always
+       navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     //MARK: - Networking calls

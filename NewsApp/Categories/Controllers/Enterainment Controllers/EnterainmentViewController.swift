@@ -24,12 +24,25 @@ class EnterainmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.gray
+        enterainmentCollectionView.backgroundColor = UIColor.gray
+        
+        setupNavBar()
+        
         // Create and register the custom collectionViewCell
         let nib = UINib(nibName: "EnterainmentCollectionViewCell", bundle: nil)
         enterainmentCollectionView.register(nib, forCellWithReuseIdentifier: "enterainmentCell")
         
         setupLayout()
         
+    }
+    
+    private func setupNavBar() {
+       // Navigation bar setup
+       navigationItem.title = "Entertainment"
+       navigationController?.navigationBar.tintColor = UIColor.white
+       navigationItem.largeTitleDisplayMode = .always
+       navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     // Setup the flowlayout
@@ -89,6 +102,10 @@ extension EnterainmentViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "enterainmentCell", for: indexPath) as! EnterainmentCollectionViewCell
+        
+        cell.titleLabel.textColor = UIColor.white
+        cell.sourceLabel.textColor = UIColor.white
+        
         
         // Grab each article
         let eachArticle = enterainmentNews[indexPath.row]
