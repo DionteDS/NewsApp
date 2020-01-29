@@ -12,11 +12,11 @@ class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
-    var layout = UICollectionViewFlowLayout()
+    private var layout = UICollectionViewFlowLayout()
     
-    let categories = ["business", "enterainment", "health", "science", "sports", "technology"]
+    private let categories = ["business", "enterainment", "health", "science", "sports", "technology"]
     
-    var row = 0
+    private var row = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

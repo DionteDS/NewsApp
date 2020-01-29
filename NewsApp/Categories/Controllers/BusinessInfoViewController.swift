@@ -39,7 +39,10 @@ class BusinessInfoViewController: UIViewController, WKUIDelegate {
         let urlRequest = URLRequest(url: url)
         
         // Load the web page with the request
-        webView.load(urlRequest)
+        DispatchQueue.main.async {
+            self.webView.load(urlRequest)
+        }
+        
     }
     
     

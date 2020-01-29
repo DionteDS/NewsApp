@@ -41,8 +41,9 @@ class NewsInfoViewController: UIViewController, WKUIDelegate {
         let urlRequest = URLRequest(url: url)
         
         // load the request and display the contents
-        webView.load(urlRequest)
-        
+        DispatchQueue.main.async {
+            self.webView.load(urlRequest)
+        }
         
     }
     

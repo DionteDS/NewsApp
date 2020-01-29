@@ -135,10 +135,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="f1E-Qw-QJN" firstAttribute="bottom" secondItem="MSt-mB-pNd" secondAttribute="bottom" id="1iA-mb-eOP"/>
-                            <constraint firstItem="MSt-mB-pNd" firstAttribute="leading" secondItem="f1E-Qw-QJN" secondAttribute="leading" id="3Mj-Zu-TwQ"/>
-                            <constraint firstItem="MSt-mB-pNd" firstAttribute="top" secondItem="f1E-Qw-QJN" secondAttribute="top" id="YCI-E4-Omd"/>
-                            <constraint firstItem="f1E-Qw-QJN" firstAttribute="trailing" secondItem="MSt-mB-pNd" secondAttribute="trailing" id="n9u-J0-Ih8"/>
+                            <constraint firstItem="MSt-mB-pNd" firstAttribute="top" secondItem="f1E-Qw-QJN" secondAttribute="top" id="3rf-hX-6Lq"/>
+                            <constraint firstItem="MSt-mB-pNd" firstAttribute="bottom" secondItem="f1E-Qw-QJN" secondAttribute="bottom" id="6kp-Bw-TQQ"/>
+                            <constraint firstItem="MSt-mB-pNd" firstAttribute="leading" secondItem="f1E-Qw-QJN" secondAttribute="leading" id="Bax-74-Y8b"/>
+                            <constraint firstItem="MSt-mB-pNd" firstAttribute="trailing" secondItem="f1E-Qw-QJN" secondAttribute="trailing" id="s9Z-kO-9VX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f1E-Qw-QJN"/>
                     </view>
