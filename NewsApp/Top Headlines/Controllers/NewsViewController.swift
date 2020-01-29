@@ -79,6 +79,7 @@ class NewsViewController: UIViewController {
     @objc func updateList(_ sender: Any) {
         
         setQuery()
+        refreshControl.endRefreshing()
         
     }
     
@@ -99,7 +100,6 @@ class NewsViewController: UIViewController {
             if let responseValue = response.result.value as! [String: Any]? {
                 if let responseNewsTopics = responseValue["articles"] as! [[String: Any]]? {
                     self.newsTopics = responseNewsTopics
-                    self.refreshControl.endRefreshing()
                     self.newsTableView.reloadData()
                 }
             } else {
