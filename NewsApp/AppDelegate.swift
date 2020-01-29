@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Customize the UITabBar background color and tint color
         UITabBar.appearance().barTintColor = .black
-        UITabBar.appearance().tintColor = .cyan
+        UITabBar.appearance().tintColor = .red
+        
+        UINavigationBar.appearance().tintColor = UIColor.white
         
         
         return true

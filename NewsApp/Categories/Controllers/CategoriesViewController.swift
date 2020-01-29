@@ -23,6 +23,8 @@ class CategoriesViewController: UIViewController {
         
         view.backgroundColor = UIColor.gray
         navigationController?.navigationBar.barTintColor = UIColor.gray
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
         categoryCollectionView.backgroundColor = UIColor.gray
 
         // Create nib and register it to the categoryCeollectionView

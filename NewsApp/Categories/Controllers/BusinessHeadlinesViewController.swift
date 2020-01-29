@@ -17,10 +17,23 @@ class BusinessHeadlinesViewController: UIViewController {
     
     let baseURL = "https://newsapi.org/v2/top-headlines"
     
-    private var businessHeadlines: [[String: Any]] = [[String: Any]]()
+    var businessHeadlines: [[String: Any]] = [[String: Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Navigation bar setup
+        navigationItem.title = "Business"
+        
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        view.backgroundColor = UIColor.gray
+        businessTableView.backgroundColor = UIColor.gray
+        
+        let nib = UINib(nibName: "BusinessTableViewCell", bundle: nil)
+        businessTableView.register(nib, forCellReuseIdentifier: "businessCell")
+        
+        businessTableView.separatorStyle = .none
         
     }
     
@@ -42,7 +55,6 @@ class BusinessHeadlinesViewController: UIViewController {
                     self.businessHeadlines = responseNews
                     self.businessTableView.reloadData()
                 }
-                
             } else {
                 print(response.error!)
             }
@@ -59,15 +71,45 @@ extension BusinessHeadlinesViewController: UITableViewDelegate, UITableViewDataS
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return businessHeadlines.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as! BusinessTableViewCell
+        
+        cell.customDesign()
+        
+        cell.newsTitle.textColor = UIColor.white
+        cell.newsSource.textColor = UIColor.white
+        
+        let eachBusinessArticle = self.businessHeadlines[indexPath.row]
+        
+        let getSource = eachBusinessArticle["source"] as! [String: Any]
+        
+        cell.newsTitle.text = (eachBusinessArticle["title"] as? String ?? "")
+        cell.newsSource.text = (getSource["name"] as? String ?? "")
+        
+        if let imageURL = eachBusinessArticle["urlToImage"] as? String {
+            Alamofire.request(imageURL).responseImage { (response) in
+                if let image = response.result.value {
+                    let size = CGSize(width: 100, height: 100)
+                    let scaleImage = image.af_imageAspectScaled(toFill: size)
+                    DispatchQueue.main.async {
+                        cell.newsImg.image = scaleImage
+                    }
+                } else {
+                    print(response.error!)
+                }
+            }
+        }
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 141
     }
     
     

@@ -25,13 +25,17 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Navigation bar setup
         navigationController?.navigationBar.barTintColor = UIColor.gray
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationItem.title = "Top Headlines"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         view.backgroundColor = UIColor.gray
         newsTableView.backgroundColor = UIColor.gray
         
-        navigationItem.title = "Top Headlines"
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
         // Create nib for news tableViewCell
         // And register the nib
@@ -60,12 +64,11 @@ class NewsViewController: UIViewController {
             
             if let responseValue = response.result.value as! [String: Any]? {
                 if let responseNewsTopics = responseValue["articles"] as! [[String: Any]]? {
-//                    print(responseNewsTopics)
-                    
                     self.newsTopics = responseNewsTopics
                     self.newsTableView.reloadData()
                 }
-                
+            } else {
+                print(response.error!)
             }
             
         }
