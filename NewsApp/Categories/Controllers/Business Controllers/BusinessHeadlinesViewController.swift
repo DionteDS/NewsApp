@@ -87,15 +87,16 @@ extension BusinessHeadlinesViewController: UITableViewDelegate, UITableViewDataS
         
         let getSource = eachBusinessArticle["source"] as! [String: Any]
         
-        cell.newsTitle.text = (eachBusinessArticle["title"] as? String ?? "")
-        cell.newsSource.text = (getSource["name"] as? String ?? "")
-        
         if let imageURL = eachBusinessArticle["urlToImage"] as? String {
             Alamofire.request(imageURL).responseImage { (response) in
                 if let image = response.result.value {
                     let size = CGSize(width: 100, height: 100)
                     let scaleImage = image.af_imageAspectScaled(toFill: size)
+                    
+                    // Display the contents on the main thread
                     DispatchQueue.main.async {
+                        cell.newsTitle.text = (eachBusinessArticle["title"] as? String ?? "")
+                        cell.newsSource.text = (getSource["name"] as? String ?? "")
                         cell.newsImg.image = scaleImage
                     }
                 } else {

@@ -10,7 +10,7 @@ import UIKit
 
 enum Category: String {
     case business = "business"
-    case enterainment = "enterainment"
+    case enterainment = "entertainment"
     case health = "health"
     case science = "science"
     case sports = "sports"
@@ -23,7 +23,7 @@ class CategoriesViewController: UIViewController {
     
     private var layout = UICollectionViewFlowLayout()
     
-    private let categories = ["business", "enterainment", "health", "science", "sports", "technology"]
+    private let categories = ["business", "entertainment", "health", "science", "sports", "technology"]
     
     private var row = 0
 
@@ -119,9 +119,10 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
             let controller = segue.destination as! BusinessHeadlinesViewController
             
             controller.setQuery(category: categories[row])
-        } else if segue.identifier == "goToEnterainment" {
+        } else if segue.identifier == "goToEnterainmentVC" {
             let controller = segue.destination as! EnterainmentViewController
-            
+        
+            controller.setQuery(category: categories[row])
         }
         
     }
