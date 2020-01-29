@@ -21,6 +21,7 @@
 		42140A8023DEB4B40082B35A /* BusinessHeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140A7F23DEB4B40082B35A /* BusinessHeadlinesViewController.swift */; };
 		42140A8323DEBA910082B35A /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140A8123DEBA910082B35A /* BusinessTableViewCell.swift */; };
 		42140A8423DEBA910082B35A /* BusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42140A8223DEBA910082B35A /* BusinessTableViewCell.xib */; };
+		4227658823E220EE00739C7F /* EnterainmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227658723E220EE00739C7F /* EnterainmentViewController.swift */; };
 		424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D623DD6094009A3815 /* NewsViewController.swift */; };
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
@@ -49,6 +50,7 @@
 		42140A7F23DEB4B40082B35A /* BusinessHeadlinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHeadlinesViewController.swift; sourceTree = "<group>"; };
 		42140A8123DEBA910082B35A /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		42140A8223DEBA910082B35A /* BusinessTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessTableViewCell.xib; sourceTree = "<group>"; };
+		4227658723E220EE00739C7F /* EnterainmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterainmentViewController.swift; sourceTree = "<group>"; };
 		424A02D623DD6094009A3815 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -164,9 +166,9 @@
 		42140A7723DE99430082B35A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4227658623E220DB00739C7F /* Enterainment Controllers */,
+				4227658523E220C100739C7F /* Business Controllers */,
 				42140A7823DE99510082B35A /* CategoriesViewController.swift */,
-				42140A7F23DEB4B40082B35A /* BusinessHeadlinesViewController.swift */,
-				42521EA823E122E600BDA595 /* BusinessInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +182,23 @@
 				42140A8223DEBA910082B35A /* BusinessTableViewCell.xib */,
 			);
 			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		4227658523E220C100739C7F /* Business Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42140A7F23DEB4B40082B35A /* BusinessHeadlinesViewController.swift */,
+				42521EA823E122E600BDA595 /* BusinessInfoViewController.swift */,
+			);
+			path = "Business Controllers";
+			sourceTree = "<group>";
+		};
+		4227658623E220DB00739C7F /* Enterainment Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4227658723E220EE00739C7F /* EnterainmentViewController.swift */,
+			);
+			path = "Enterainment Controllers";
 			sourceTree = "<group>";
 		};
 		424A02D423DD6053009A3815 /* Views */ = {
@@ -340,6 +359,7 @@
 				42521EA923E122E600BDA595 /* BusinessInfoViewController.swift in Sources */,
 				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
+				4227658823E220EE00739C7F /* EnterainmentViewController.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
 				42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */,

@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum Category: String {
+    case business = "business"
+    case enterainment = "enterainment"
+    case health = "health"
+    case science = "science"
+    case sports = "sports"
+    case technology = "technology"
+}
+
 class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -83,7 +92,19 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
             row = rowIndex.item
         }
         
-        performSegue(withIdentifier: "goToBusinessController", sender: self)
+        // Grab the select category
+        let topicPicked = categories[row]
+        
+        // Check which category was selected
+        // And go to that category View Controller
+        switch topicPicked{
+        case Category.business.rawValue:
+            performSegue(withIdentifier: "goToBusinessController", sender: self)
+        case Category.enterainment.rawValue:
+            performSegue(withIdentifier: "goToEnterainmentVC", sender: self)
+        default:
+            print("No category")
+        }
         
         collectionView.deselectItem(at: indexPath, animated: true)
         
@@ -93,10 +114,14 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
     // Prepare data to be sent over
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // Determine which category to segue too.
         if segue.identifier == "goToBusinessController" {
             let controller = segue.destination as! BusinessHeadlinesViewController
             
             controller.setQuery(category: categories[row])
+        } else if segue.identifier == "goToEnterainment" {
+            let controller = segue.destination as! EnterainmentViewController
+            
         }
         
     }
