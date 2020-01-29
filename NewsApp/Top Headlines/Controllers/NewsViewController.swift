@@ -21,9 +21,34 @@ class NewsViewController: UIViewController {
     var newsTopics: [[String: Any]] = [[String: Any]]()
     var row = 0
     
+    var refreshControl = UIRefreshControl()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavBar()
+        
+        view.backgroundColor = UIColor.gray
+        newsTableView.backgroundColor = UIColor.gray
+        
+        setupRefreshControl()
+        
+        
+        // Create nib for news tableViewCell
+        // And register the nib
+        let nib = UINib(nibName: "NewsTableViewCell", bundle: nil)
+        newsTableView.register(nib, forCellReuseIdentifier: "newsCell")
+        
+        newsTableView.separatorStyle = .none
+        
+        newsTableView.tableFooterView = UIView.init(frame: .zero)
+        
+        setQuery()
+        
+    }
+    
+    func setupNavBar() {
         
         // Navigation bar setup
         navigationController?.navigationBar.barTintColor = UIColor.gray
@@ -32,17 +57,26 @@ class NewsViewController: UIViewController {
         navigationItem.title = "Top Headlines"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
-        view.backgroundColor = UIColor.gray
-        newsTableView.backgroundColor = UIColor.gray
+    }
+    
+    func setupRefreshControl() {
         
+        // If user is on iOS version 10.0 add the refreshControl to the
+        // newsTableView.refreshControl property
+        // Else add the refreshControl to the newsTableView SubView
+        if #available(iOS 10.0, *) {
+            newsTableView.refreshControl = refreshControl
+        } else {
+            newsTableView.addSubview(refreshControl)
+        }
         
-
-        // Create nib for news tableViewCell
-        // And register the nib
-        let nib = UINib(nibName: "NewsTableViewCell", bundle: nil)
-        newsTableView.register(nib, forCellReuseIdentifier: "newsCell")
+        refreshControl.addTarget(self, action: #selector(updateList(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.red
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching news data", attributes: [NSAttributedString.Key.foregroundColor: UIColor.cyan])
         
-        newsTableView.separatorStyle = .none
+    }
+    
+    @objc func updateList(_ sender: Any) {
         
         setQuery()
         
@@ -65,6 +99,7 @@ class NewsViewController: UIViewController {
             if let responseValue = response.result.value as! [String: Any]? {
                 if let responseNewsTopics = responseValue["articles"] as! [[String: Any]]? {
                     self.newsTopics = responseNewsTopics
+                    self.refreshControl.endRefreshing()
                     self.newsTableView.reloadData()
                 }
             } else {
