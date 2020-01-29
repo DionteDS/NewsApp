@@ -15,9 +15,10 @@ class BusinessHeadlinesViewController: UIViewController {
     @IBOutlet weak var businessTableView: UITableView!
     
     
-    let baseURL = "https://newsapi.org/v2/top-headlines"
+    private let baseURL = "https://newsapi.org/v2/top-headlines"
     
-    var businessHeadlines: [[String: Any]] = [[String: Any]]()
+    private var businessHeadlines: [[String: Any]] = [[String: Any]]()
+    private var row = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +29,10 @@ class BusinessHeadlinesViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         view.backgroundColor = UIColor.gray
-        businessTableView.backgroundColor = UIColor.gray
         
         let nib = UINib(nibName: "BusinessTableViewCell", bundle: nil)
         businessTableView.register(nib, forCellReuseIdentifier: "businessCell")
-        
+        businessTableView.backgroundColor = UIColor.gray
         businessTableView.separatorStyle = .none
         
     }
@@ -108,9 +108,34 @@ extension BusinessHeadlinesViewController: UITableViewDelegate, UITableViewDataS
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let rowIndex = tableView.indexPathForSelectedRow?.row {
+            row = rowIndex
+        }
+        
+        performSegue(withIdentifier: "goToBusinessURLs", sender: self)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 141
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToBusinessURLs" {
+            let controller = segue.destination as! BusinessInfoViewController
+            
+            let eachBusinessArticle = businessHeadlines[row]
+            
+            let url = (eachBusinessArticle["url"] as? String ?? "")
+            
+            controller.webURLString = url
+        }
+    }
     
 }
