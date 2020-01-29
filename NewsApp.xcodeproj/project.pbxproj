@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17669FA190967CAC4EC6DACA /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECAAAA30AC1FE2F5BB97112 /* Pods_NewsApp.framework */; };
+		4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203A58D23E22B1F004032FE /* EnterainmentCollectionViewCell.swift */; };
+		4203A59023E22B1F004032FE /* EnterainmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4203A58E23E22B1F004032FE /* EnterainmentCollectionViewCell.xib */; };
 		420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A8A6423DD4D9B007913F3 /* AppDelegate.swift */; };
 		420A8A6723DD4D9B007913F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A8A6623DD4D9B007913F3 /* SceneDelegate.swift */; };
 		420A8A6C23DD4D9B007913F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6A23DD4D9B007913F3 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		1A27A96544FD079F5218A6A2 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		2ECAAAA30AC1FE2F5BB97112 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4203A58D23E22B1F004032FE /* EnterainmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterainmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		4203A58E23E22B1F004032FE /* EnterainmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterainmentCollectionViewCell.xib; sourceTree = "<group>"; };
 		420A8A6123DD4D9B007913F3 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		420A8A6423DD4D9B007913F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		420A8A6623DD4D9B007913F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,24 @@
 				1A27A96544FD079F5218A6A2 /* Pods-NewsApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4203A58B23E22AE3004032FE /* Custom Business Cell */ = {
+			isa = PBXGroup;
+			children = (
+				42140A8123DEBA910082B35A /* BusinessTableViewCell.swift */,
+				42140A8223DEBA910082B35A /* BusinessTableViewCell.xib */,
+			);
+			path = "Custom Business Cell";
+			sourceTree = "<group>";
+		};
+		4203A58C23E22AF9004032FE /* Custom Enterainment Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4203A58D23E22B1F004032FE /* EnterainmentCollectionViewCell.swift */,
+				4203A58E23E22B1F004032FE /* EnterainmentCollectionViewCell.xib */,
+			);
+			path = "Custom Enterainment Cells";
 			sourceTree = "<group>";
 		};
 		420A8A5823DD4D9B007913F3 = {
@@ -176,10 +198,10 @@
 		42140A7A23DE9A4C0082B35A /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4203A58C23E22AF9004032FE /* Custom Enterainment Cells */,
+				4203A58B23E22AE3004032FE /* Custom Business Cell */,
 				42140A7B23DE9A650082B35A /* CustomCollectionViewCell.swift */,
 				42140A7C23DE9A650082B35A /* CustomCollectionViewCell.xib */,
-				42140A8123DEBA910082B35A /* BusinessTableViewCell.swift */,
-				42140A8223DEBA910082B35A /* BusinessTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -301,6 +323,7 @@
 				420A8A6E23DD4D9C007913F3 /* Assets.xcassets in Resources */,
 				424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */,
 				42140A7623DE95CF0082B35A /* Categories.storyboard in Resources */,
+				4203A59023E22B1F004032FE /* EnterainmentCollectionViewCell.xib in Resources */,
 				420A8A6C23DD4D9B007913F3 /* Main.storyboard in Resources */,
 				42140A7E23DE9A650082B35A /* CustomCollectionViewCell.xib in Resources */,
 			);
@@ -359,6 +382,7 @@
 				42521EA923E122E600BDA595 /* BusinessInfoViewController.swift in Sources */,
 				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
+				4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */,
 				4227658823E220EE00739C7F /* EnterainmentViewController.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
