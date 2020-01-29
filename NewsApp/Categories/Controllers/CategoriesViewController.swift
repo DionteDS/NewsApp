@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Category: String {
+private enum Category: String {
     case business = "business"
     case enterainment = "entertainment"
     case health = "health"
@@ -30,10 +30,10 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavBar()
+        
         view.backgroundColor = UIColor.gray
-        navigationController?.navigationBar.barTintColor = UIColor.gray
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .never
+        
         categoryCollectionView.backgroundColor = UIColor.gray
 
         // Create nib and register it to the categoryCeollectionView
@@ -42,6 +42,16 @@ class CategoriesViewController: UIViewController {
         
         setupLayout()
         
+    }
+    
+    // Setup the navBar
+    func setupNavBar() {
+        
+        navigationController?.navigationBar.barTintColor = UIColor.gray
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     // Setup the flowlayout for the collectionViewCells

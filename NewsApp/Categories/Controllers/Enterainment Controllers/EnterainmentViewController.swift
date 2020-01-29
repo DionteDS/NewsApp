@@ -20,6 +20,8 @@ class EnterainmentViewController: UIViewController {
     
     private var enterainmentNews: [[String: Any]] = [[String: Any]]()
     
+    private var row = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,14 @@ class EnterainmentViewController: UIViewController {
     private func setupNavBar() {
        // Navigation bar setup
        navigationItem.title = "Entertainment"
+        
        navigationController?.navigationBar.tintColor = UIColor.white
+        
        navigationItem.largeTitleDisplayMode = .always
+        
        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     // Setup the flowlayout
@@ -103,6 +110,8 @@ extension EnterainmentViewController: UICollectionViewDelegate, UICollectionView
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "enterainmentCell", for: indexPath) as! EnterainmentCollectionViewCell
         
+        cell.designBorderBackground(radius: 10, borderColor: .gray, shadowColor: .black)
+        
         cell.titleLabel.textColor = UIColor.white
         cell.sourceLabel.textColor = UIColor.white
         
@@ -132,9 +141,34 @@ extension EnterainmentViewController: UICollectionViewDelegate, UICollectionView
                 }
             }
         }
-        
-        
         return cell
+    }
+    
+    // Select the cell you want to segue too.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let rowIndex = collectionView.indexPathsForSelectedItems?.first {
+            row = rowIndex.row
+        }
+        
+        performSegue(withIdentifier: "enterainmentWebViewVC", sender: self)
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+    }
+    
+    // Prepare the info to be sent over to the View Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "enterainmentWebViewVC" {
+            let controller = segue.destination as! EnterainmentWebVCViewController
+            
+            let eachArticle = enterainmentNews[row]
+            
+            let url = eachArticle["url"] as? String ?? ""
+            
+            controller.webURLString = url
+        }
         
     }
     

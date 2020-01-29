@@ -39,7 +39,10 @@ class BusinessHeadlinesViewController: UIViewController {
        navigationItem.title = "Business"
        
        navigationItem.largeTitleDisplayMode = .always
+        
        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     //MARK: - Networking calls
