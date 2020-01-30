@@ -29,14 +29,4 @@ extension UICollectionViewCell {
         
     }
     
-    func borderDesignOnly() {
-        
-        let radius: CGFloat = 10
-        contentView.layer.cornerRadius = radius
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.gray.cgColor
-        contentView.layer.masksToBounds = true
-        
-    }
-    
 }

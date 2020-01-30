@@ -30,7 +30,6 @@ class NewsViewController: UIViewController {
         setupNavBar()
         
         view.backgroundColor = UIColor.gray
-        newsTableView.backgroundColor = UIColor.gray
         
         setupRefreshControl()
         
@@ -40,7 +39,10 @@ class NewsViewController: UIViewController {
         let nib = UINib(nibName: "NewsTableViewCell", bundle: nil)
         newsTableView.register(nib, forCellReuseIdentifier: "newsCell")
         
+        newsTableView.backgroundColor = UIColor.gray
+        
         newsTableView.separatorStyle = .none
+        
         
         newsTableView.tableFooterView = UIView.init(frame: .zero)
         

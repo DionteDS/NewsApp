@@ -65,11 +65,64 @@
                         <outlet property="categoryCollectionView" destination="FHd-2q-CFb" id="ACQ-f1-Qif"/>
                         <segue destination="QNP-sO-6Nh" kind="show" identifier="goToBusinessController" id="uHL-f4-Jgh"/>
                         <segue destination="Lrm-Fg-e9L" kind="show" identifier="goToEnterainmentVC" id="ZJd-N4-aWD"/>
+                        <segue destination="Kxb-Pb-FPw" kind="show" identifier="goToHealthVc" id="E3u-aB-WQB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb1-d4-LkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="132.58928571428572"/>
+        </scene>
+        <!--Health View Controller-->
+        <scene sceneID="45a-c2-7UW">
+            <objects>
+                <viewController id="Kxb-Pb-FPw" customClass="HealthViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Fo-nW-zrf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ITe-r0-Y37">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gox-Jg-ofu">
+                                    <size key="itemSize" width="323" height="207"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="aSS-tu-7cP">
+                                        <rect key="frame" x="46" y="0.0" width="322" height="207"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wnP-ty-a5R">
+                                            <rect key="frame" x="0.0" y="0.0" width="322" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="322" height="207"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kxb-Pb-FPw" id="QAW-m2-WMY"/>
+                                    <outlet property="delegate" destination="Kxb-Pb-FPw" id="GGC-ra-1bd"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pvz-rG-vAm" firstAttribute="trailing" secondItem="ITe-r0-Y37" secondAttribute="trailing" id="Y19-3j-25b"/>
+                            <constraint firstItem="ITe-r0-Y37" firstAttribute="top" secondItem="Pvz-rG-vAm" secondAttribute="top" id="ehO-a7-q2z"/>
+                            <constraint firstItem="ITe-r0-Y37" firstAttribute="leading" secondItem="Pvz-rG-vAm" secondAttribute="leading" id="meL-99-ye4"/>
+                            <constraint firstItem="Pvz-rG-vAm" firstAttribute="bottom" secondItem="ITe-r0-Y37" secondAttribute="bottom" id="qko-bT-vFp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pvz-rG-vAm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rtA-za-n1P"/>
+                    <connections>
+                        <outlet property="healthCollectionView" destination="ITe-r0-Y37" id="sjK-4k-Vmh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kz8-hT-0Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6376811594205" y="761.38392857142856"/>
         </scene>
         <!--Enterainment View Controller-->
         <scene sceneID="q6O-wX-AN1">
