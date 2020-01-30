@@ -14,6 +14,8 @@ class ScienceViewController: UIViewController {
     
     @IBOutlet weak var scienceCollectionView: UICollectionView!
     
+    private var baseURL = "https://newsapi.org/v2/top-headlines"
+    
     private var scienceNews: [[String: Any]] = [[String: Any]]()
     
     private var layout = UICollectionViewFlowLayout()
@@ -32,6 +34,35 @@ class ScienceViewController: UIViewController {
         
         let nib = UINib(nibName: "ScienceCollectionViewCell", bundle: nil)
         scienceCollectionView.register(nib, forCellWithReuseIdentifier: "scienceCell")
+        
+    }
+    
+    //MARK: -  Network calls
+    
+    // Set the search query
+    public func setQuery(category: String) {
+        
+        let params: [String: String] = ["apiKey": APIKEY, "category": category, "country": "us", "pageSize": "10"]
+        
+        fetchData(url: baseURL, parameters: params)
+        
+    }
+    
+    // Fetch the data
+    private func fetchData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            
+            if let responseValue = response.result.value as! [String: Any]? {
+                if let responseNews = responseValue["articles"] as! [[String: Any]]? {
+                    self.scienceNews = responseNews
+                    self.scienceCollectionView.reloadData()
+                }
+            } else {
+                print(response.error!)
+            }
+            
+        }
         
     }
     
@@ -72,7 +103,7 @@ class ScienceViewController: UIViewController {
 extension ScienceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return scienceNews.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,8 +115,30 @@ extension ScienceViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.titleLabel.textColor = UIColor.white
         cell.sourceLabel.textColor = UIColor.white
         
-        cell.titleLabel.text = "Title"
-        cell.sourceLabel.text = "Source"
+        // Grab each science news article
+        let scienceNewsArticles = scienceNews[indexPath.row]
+        
+        // Grab each source and turn into a dictonary
+        let sourceNews = scienceNewsArticles["source"] as! [String: Any]
+        
+        // Grab the url to the article image
+        if let imageURL = scienceNewsArticles["urlToImage"] as? String {
+            Alamofire.request(imageURL).responseImage { (response) in
+                if let image = response.result.value {
+                    let size = CGSize(width: 322, height: 128)
+                    let scaledImage = image.af_imageAspectScaled(toFill: size)
+                    
+                    // Display content back on main thread
+                    DispatchQueue.main.async {
+                        cell.titleLabel.text = (scienceNewsArticles["title"] as? String ?? "")
+                        cell.sourceLabel.text = (sourceNews["name"] as? String ?? "")
+                        cell.imgView.image = scaledImage
+                    }
+                } else {
+                    print(response.error!)
+                }
+            }
+        }
         
         return cell
         

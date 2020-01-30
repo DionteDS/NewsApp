@@ -144,7 +144,7 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
         } else if segue.identifier == "goToScienceVC" {
             let controller = segue.destination as! ScienceViewController
             
-            
+            controller.setQuery(category: categories[row])
         }
         
     }
