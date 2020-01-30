@@ -68,6 +68,7 @@ class HealthViewController: UIViewController {
     
     // Setup NavBar
     private func setupNavBar() {
+        
        // Navigation bar setup
        navigationItem.title = "Health"
         

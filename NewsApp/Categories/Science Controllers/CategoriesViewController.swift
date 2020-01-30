@@ -114,6 +114,8 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
             performSegue(withIdentifier: "goToEnterainmentVC", sender: self)
         case Category.health.rawValue:
             performSegue(withIdentifier: "goToHealthVc", sender: self)
+        case Category.science.rawValue:
+            performSegue(withIdentifier: "goToScienceVC", sender: self)
         default:
             print("No category")
         }
@@ -139,6 +141,10 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
             let controller = segue.destination as! HealthViewController
             
             controller.setQuery(category: categories[row])
+        } else if segue.identifier == "goToScienceVC" {
+            let controller = segue.destination as! ScienceViewController
+            
+            
         }
         
     }

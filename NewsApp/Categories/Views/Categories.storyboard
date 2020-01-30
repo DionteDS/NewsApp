@@ -66,6 +66,7 @@
                         <segue destination="QNP-sO-6Nh" kind="show" identifier="goToBusinessController" id="uHL-f4-Jgh"/>
                         <segue destination="Lrm-Fg-e9L" kind="show" identifier="goToEnterainmentVC" id="ZJd-N4-aWD"/>
                         <segue destination="Kxb-Pb-FPw" kind="show" identifier="goToHealthVc" id="E3u-aB-WQB"/>
+                        <segue destination="taw-Ht-qIl" kind="show" identifier="goToScienceVC" id="GmS-OP-JHU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb1-d4-LkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,6 +125,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kz8-hT-0Qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1924.6376811594205" y="761.38392857142856"/>
+        </scene>
+        <!--Science View Controller-->
+        <scene sceneID="FKd-h8-vkm">
+            <objects>
+                <viewController id="taw-Ht-qIl" customClass="ScienceViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TjR-XA-JmP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-As-2o8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TWe-4r-hAK">
+                                    <size key="itemSize" width="398" height="233"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="uMX-78-jZv">
+                                        <rect key="frame" x="46" y="0.0" width="322" height="207"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="F2V-Jm-dYi">
+                                            <rect key="frame" x="0.0" y="0.0" width="322" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="322" height="207"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="taw-Ht-qIl" id="RVZ-Nh-BCB"/>
+                                    <outlet property="delegate" destination="taw-Ht-qIl" id="SZL-id-A77"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vaJ-As-2o8" firstAttribute="top" secondItem="tUn-dB-rRM" secondAttribute="top" id="CtA-2m-QbO"/>
+                            <constraint firstItem="tUn-dB-rRM" firstAttribute="trailing" secondItem="vaJ-As-2o8" secondAttribute="trailing" id="IGZ-IO-eFD"/>
+                            <constraint firstItem="vaJ-As-2o8" firstAttribute="leading" secondItem="tUn-dB-rRM" secondAttribute="leading" id="XBz-bQ-iVQ"/>
+                            <constraint firstItem="tUn-dB-rRM" firstAttribute="bottom" secondItem="vaJ-As-2o8" secondAttribute="bottom" id="gYK-DV-R2R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tUn-dB-rRM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="97Q-n5-tmV"/>
+                    <connections>
+                        <outlet property="scienceCollectionView" destination="vaJ-As-2o8" id="mAp-1N-4eG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1Q-2m-nHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962.3188405797102" y="1637.9464285714284"/>
         </scene>
         <!--Health Info View Controller-->
         <scene sceneID="Qll-GF-pKZ">

@@ -36,6 +36,9 @@
 		42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */; };
 		42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */; };
 		42521EA923E122E600BDA595 /* BusinessInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA823E122E600BDA595 /* BusinessInfoViewController.swift */; };
+		42562FB323E35EF900A5A405 /* ScienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42562FB223E35EF900A5A405 /* ScienceViewController.swift */; };
+		42562FB723E3603500A5A405 /* ScienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42562FB523E3603500A5A405 /* ScienceCollectionViewCell.swift */; };
+		42562FB823E3603500A5A405 /* ScienceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42562FB623E3603500A5A405 /* ScienceCollectionViewCell.xib */; };
 		42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,9 @@
 		42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCell+Design.swift"; sourceTree = "<group>"; };
 		42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Design.swift"; sourceTree = "<group>"; };
 		42521EA823E122E600BDA595 /* BusinessInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoViewController.swift; sourceTree = "<group>"; };
+		42562FB223E35EF900A5A405 /* ScienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceViewController.swift; sourceTree = "<group>"; };
+		42562FB523E3603500A5A405 /* ScienceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceCollectionViewCell.swift; sourceTree = "<group>"; };
+		42562FB623E3603500A5A405 /* ScienceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScienceCollectionViewCell.xib; sourceTree = "<group>"; };
 		42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoViewController.swift; sourceTree = "<group>"; };
 		486532D316927D37185457B7 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +187,7 @@
 			children = (
 				42521EA323E0D96700BDA595 /* Extenstions */,
 				42140A7A23DE9A4C0082B35A /* Custom Cells */,
-				42140A7723DE99430082B35A /* Controllers */,
+				42140A7723DE99430082B35A /* Science Controllers */,
 				42140A7423DE95BE0082B35A /* Views */,
 			);
 			path = Categories;
@@ -195,20 +201,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		42140A7723DE99430082B35A /* Controllers */ = {
+		42140A7723DE99430082B35A /* Science Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				42562FB223E35EF900A5A405 /* ScienceViewController.swift */,
 				4243DA9523E28901004A2734 /* Health Controllers */,
 				4227658623E220DB00739C7F /* Enterainment Controllers */,
 				4227658523E220C100739C7F /* Business Controllers */,
 				42140A7823DE99510082B35A /* CategoriesViewController.swift */,
 			);
-			path = Controllers;
+			path = "Science Controllers";
 			sourceTree = "<group>";
 		};
 		42140A7A23DE9A4C0082B35A /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				42562FB423E3601900A5A405 /* Custom Science Cells */,
 				4243DA9823E28A56004A2734 /* Custom Health Cells */,
 				4203A58C23E22AF9004032FE /* Custom Enterainment Cells */,
 				4203A58B23E22AE3004032FE /* Custom Business Cell */,
@@ -278,6 +286,15 @@
 				42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */,
 			);
 			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		42562FB423E3601900A5A405 /* Custom Science Cells */ = {
+			isa = PBXGroup;
+			children = (
+				42562FB523E3603500A5A405 /* ScienceCollectionViewCell.swift */,
+				42562FB623E3603500A5A405 /* ScienceCollectionViewCell.xib */,
+			);
+			path = "Custom Science Cells";
 			sourceTree = "<group>";
 		};
 		4EA553EC9A1CE5DBC11F7A45 /* Frameworks */ = {
@@ -357,6 +374,7 @@
 				42140A7623DE95CF0082B35A /* Categories.storyboard in Resources */,
 				4203A59023E22B1F004032FE /* EnterainmentCollectionViewCell.xib in Resources */,
 				420A8A6C23DD4D9B007913F3 /* Main.storyboard in Resources */,
+				42562FB823E3603500A5A405 /* ScienceCollectionViewCell.xib in Resources */,
 				42140A7E23DE9A650082B35A /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,11 +434,13 @@
 				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */,
+				42562FB723E3603500A5A405 /* ScienceCollectionViewCell.swift in Sources */,
 				4227658823E220EE00739C7F /* EnterainmentViewController.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
 				4243DA9723E28914004A2734 /* HealthViewController.swift in Sources */,
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
 				42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */,
+				42562FB323E35EF900A5A405 /* ScienceViewController.swift in Sources */,
 				42140A7D23DE9A650082B35A /* CustomCollectionViewCell.swift in Sources */,
 				4243DA9E23E2A02A004A2734 /* HealthInfoViewController.swift in Sources */,
 				4243DA9B23E28A70004A2734 /* HealthCollectionViewCell.swift in Sources */,
