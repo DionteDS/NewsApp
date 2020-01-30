@@ -31,6 +31,8 @@ class ScienceViewController: UIViewController {
         scienceCollectionView.backgroundColor = UIColor.gray
         
         setupNavBar()
+        
+        setupRefreshControl()
 
         setupLayout()
         
@@ -96,6 +98,29 @@ class ScienceViewController: UIViewController {
         layout.scrollDirection = .vertical
         
         scienceCollectionView.setCollectionViewLayout(layout, animated: true)
+    }
+    
+    private func setupRefreshControl() {
+        
+        // If user is on iOS version 10.0 add the refreshControl to the
+        // newsTableView.refreshControl property
+        // Else add the refreshControl to the newsTableView SubView
+        if #available(iOS 10.0, *) {
+            scienceCollectionView.refreshControl = refreshControl
+        } else {
+            scienceCollectionView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
+        refreshControl.tintColor = .red
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching data", attributes: [NSAttributedString.Key.foregroundColor : UIColor.cyan])
+        
+    }
+    
+    @objc private func updateList() {
+        
+        setQuery(category: "science")
+        refreshControl.endRefreshing()
     }
 
 }
