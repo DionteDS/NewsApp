@@ -21,6 +21,8 @@ class ScienceViewController: UIViewController {
     private var layout = UICollectionViewFlowLayout()
     
     private var refreshControl = UIRefreshControl()
+    
+    private var row = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,9 +141,33 @@ extension ScienceViewController: UICollectionViewDelegate, UICollectionViewDataS
                 }
             }
         }
-        
         return cell
+    }
+    
+    // Select a cell to see its news
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if let rowIndex = collectionView.indexPathsForSelectedItems?.first {
+            row = rowIndex.row
+        }
+        
+        performSegue(withIdentifier: "scienceWebViewVC", sender: self)
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+    }
+    
+    // Prepare the info to be sent
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "scienceWebViewVC" {
+            let controller = segue.destination as! ScienceInfoViewController
+            
+            let scienceArticle = scienceNews[row]
+            
+            let url = scienceArticle["url"] as? String ?? ""
+            
+            controller.webURLString = url
+        }
     }
     
     

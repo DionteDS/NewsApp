@@ -39,6 +39,7 @@
 		42562FB323E35EF900A5A405 /* ScienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42562FB223E35EF900A5A405 /* ScienceViewController.swift */; };
 		42562FB723E3603500A5A405 /* ScienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42562FB523E3603500A5A405 /* ScienceCollectionViewCell.swift */; };
 		42562FB823E3603500A5A405 /* ScienceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42562FB623E3603500A5A405 /* ScienceCollectionViewCell.xib */; };
+		42562FBA23E3727300A5A405 /* ScienceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42562FB923E3727300A5A405 /* ScienceInfoViewController.swift */; };
 		42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		42562FB223E35EF900A5A405 /* ScienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceViewController.swift; sourceTree = "<group>"; };
 		42562FB523E3603500A5A405 /* ScienceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceCollectionViewCell.swift; sourceTree = "<group>"; };
 		42562FB623E3603500A5A405 /* ScienceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScienceCollectionViewCell.xib; sourceTree = "<group>"; };
+		42562FB923E3727300A5A405 /* ScienceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceInfoViewController.swift; sourceTree = "<group>"; };
 		42BED27A23DD87B7004C03B5 /* NewsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoViewController.swift; sourceTree = "<group>"; };
 		486532D316927D37185457B7 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				42562FB223E35EF900A5A405 /* ScienceViewController.swift */,
+				42562FB923E3727300A5A405 /* ScienceInfoViewController.swift */,
 				4243DA9523E28901004A2734 /* Health Controllers */,
 				4227658623E220DB00739C7F /* Enterainment Controllers */,
 				4227658523E220C100739C7F /* Business Controllers */,
@@ -431,6 +434,7 @@
 				4203A59223E24A0C004032FE /* EnterainmentWebVCViewController.swift in Sources */,
 				42140A8023DEB4B40082B35A /* BusinessHeadlinesViewController.swift in Sources */,
 				42521EA923E122E600BDA595 /* BusinessInfoViewController.swift in Sources */,
+				42562FBA23E3727300A5A405 /* ScienceInfoViewController.swift in Sources */,
 				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */,

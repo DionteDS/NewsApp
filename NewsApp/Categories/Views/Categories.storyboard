@@ -172,11 +172,47 @@
                     <navigationItem key="navigationItem" id="97Q-n5-tmV"/>
                     <connections>
                         <outlet property="scienceCollectionView" destination="vaJ-As-2o8" id="mAp-1N-4eG"/>
+                        <segue destination="Uqc-VD-7cg" kind="show" identifier="scienceWebViewVC" id="Zf1-aZ-a3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1Q-2m-nHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1962.3188405797102" y="1637.9464285714284"/>
+        </scene>
+        <!--Science Info View Controller-->
+        <scene sceneID="AAQ-gi-x6k">
+            <objects>
+                <viewController id="Uqc-VD-7cg" customClass="ScienceInfoViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZF2-cB-0oT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJn-lb-V2M">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="z2s-D6-Zcm" firstAttribute="trailing" secondItem="rJn-lb-V2M" secondAttribute="trailing" id="M3B-N1-u4K"/>
+                            <constraint firstItem="z2s-D6-Zcm" firstAttribute="bottom" secondItem="rJn-lb-V2M" secondAttribute="bottom" id="XQC-Dg-cgb"/>
+                            <constraint firstItem="rJn-lb-V2M" firstAttribute="top" secondItem="z2s-D6-Zcm" secondAttribute="top" id="bFK-Wd-Ybd"/>
+                            <constraint firstItem="rJn-lb-V2M" firstAttribute="leading" secondItem="z2s-D6-Zcm" secondAttribute="leading" id="iOg-fY-wZZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z2s-D6-Zcm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EIO-Q5-UTu"/>
+                    <connections>
+                        <outlet property="webView" destination="rJn-lb-V2M" id="SLa-IU-Gak"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDq-5U-Mj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2765" y="1641"/>
         </scene>
         <!--Health Info View Controller-->
         <scene sceneID="Qll-GF-pKZ">
