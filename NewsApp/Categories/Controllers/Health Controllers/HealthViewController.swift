@@ -14,9 +14,13 @@ class HealthViewController: UIViewController {
     
     @IBOutlet weak var healthCollectionView: UICollectionView!
     
+    private let baseURL = "https://newsapi.org/v2/top-headlines"
+    
     private var healthNews: [[String: Any]] = [[String: Any]]()
     
     private var layout = UICollectionViewFlowLayout()
+    
+    private var refreshControl = UIRefreshControl()
     
     private var row = 0
 
@@ -25,6 +29,8 @@ class HealthViewController: UIViewController {
         
         view.backgroundColor = UIColor.gray
         
+        setupRefreshControl()
+        
         let nib = UINib(nibName: "HealthCollectionViewCell", bundle: nil)
         healthCollectionView.register(nib, forCellWithReuseIdentifier: "healthCell")
         healthCollectionView.backgroundColor = UIColor.gray
@@ -32,6 +38,31 @@ class HealthViewController: UIViewController {
         setupNavBar()
         
         setupLayout()
+        
+    }
+    
+    // Setup the refreshControl
+    private func setupRefreshControl() {
+        
+        // If user is on iOS version 10.0 add the refreshControl to the
+        // newsTableView.refreshControl property
+        // Else add the refreshControl to the newsTableView SubView
+        if #available(iOS 10.0, *) {
+            healthCollectionView.refreshControl = refreshControl
+        } else {
+            healthCollectionView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
+        refreshControl.tintColor = UIColor.red
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching data", attributes: [NSAttributedString.Key.foregroundColor : UIColor.cyan])
+        
+    }
+    
+    @objc private func updateList() {
+        
+        setQuery(category: "health")
+        refreshControl.endRefreshing()
         
     }
     
@@ -65,9 +96,28 @@ class HealthViewController: UIViewController {
         
     }
     
-    func setQuery(category: String) {
+    //MARK: - Network calls
+    
+    // Set the search query
+    public func setQuery(category: String) {
         
+        let params: [String: String] = ["apiKey": APIKEY, "category": category, "country": "us", "pageSize": "10"]
         
+        fetchData(url: baseURL, parameters: params)
+        
+    }
+    
+    // Fetch the data
+    private func fetchData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            if let responseValue = response.result.value as! [String: Any]? {
+                if let responseHealthNews = responseValue["articles"] as! [[String: Any]]? {
+                    self.healthNews = responseHealthNews
+                    self.healthCollectionView.reloadData()
+                }
+            }
+        }
         
     }
 
@@ -78,7 +128,7 @@ class HealthViewController: UIViewController {
 extension HealthViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return healthNews.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -89,11 +139,56 @@ extension HealthViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.titleLabel.textColor = UIColor.white
         cell.sourceLabel.textColor = UIColor.white
         
-        cell.titleLabel.text = "Title"
-        cell.sourceLabel.text = "Source"
         
+        let healthNewsArticle = healthNews[indexPath.row]
         
+        let healthSource = healthNewsArticle["source"] as! [String: Any]
+        
+        // Grab the image url to the article
+        if let imageURL = healthNewsArticle["urlToImage"] as? String {
+            Alamofire.request(imageURL).responseImage { (response) in
+                if let image = response.result.value {
+                    let size = CGSize(width: 322, height: 123)
+                    let scaledImage = image.af_imageAspectScaled(toFill: size)
+                    
+                    // Display the contents on the main thread
+                    DispatchQueue.main.async {
+                        cell.titleLabel.text = (healthNewsArticle["title"] as? String ?? "")
+                        cell.sourceLabel.text = (healthSource["name"] as? String ?? "")
+                        cell.imgView.image = scaledImage
+                    }
+                }
+            }
+        }
         return cell
+    }
+    
+    // Tapp a cell to segue over to it
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let rowIndex = collectionView.indexPathsForSelectedItems?.first {
+            row = rowIndex.row
+        }
+        
+        performSegue(withIdentifier: "healthWebViewVC", sender: self)
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+    }
+    
+    // Prepare the data to be sent over
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "healthWebViewVC" {
+            let controller = segue.destination as! HealthInfoViewController
+            
+            let eachArticle = healthNews[row]
+            
+            let url = eachArticle["url"] as? String ?? ""
+            
+            controller.webURLString = url
+        }
+        
     }
     
     

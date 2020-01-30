@@ -28,6 +28,7 @@
 		4243DA9723E28914004A2734 /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243DA9623E28914004A2734 /* HealthViewController.swift */; };
 		4243DA9B23E28A70004A2734 /* HealthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243DA9923E28A70004A2734 /* HealthCollectionViewCell.swift */; };
 		4243DA9C23E28A70004A2734 /* HealthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4243DA9A23E28A70004A2734 /* HealthCollectionViewCell.xib */; };
+		4243DA9E23E2A02A004A2734 /* HealthInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243DA9D23E2A02A004A2734 /* HealthInfoViewController.swift */; };
 		424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D623DD6094009A3815 /* NewsViewController.swift */; };
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
@@ -63,6 +64,7 @@
 		4243DA9623E28914004A2734 /* HealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
 		4243DA9923E28A70004A2734 /* HealthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCollectionViewCell.swift; sourceTree = "<group>"; };
 		4243DA9A23E28A70004A2734 /* HealthCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthCollectionViewCell.xib; sourceTree = "<group>"; };
+		4243DA9D23E2A02A004A2734 /* HealthInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInfoViewController.swift; sourceTree = "<group>"; };
 		424A02D623DD6094009A3815 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				4243DA9623E28914004A2734 /* HealthViewController.swift */,
+				4243DA9D23E2A02A004A2734 /* HealthInfoViewController.swift */,
 			);
 			path = "Health Controllers";
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */,
 				42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */,
 				42140A7D23DE9A650082B35A /* CustomCollectionViewCell.swift in Sources */,
+				4243DA9E23E2A02A004A2734 /* HealthInfoViewController.swift in Sources */,
 				4243DA9B23E28A70004A2734 /* HealthCollectionViewCell.swift in Sources */,
 				42140A8323DEBA910082B35A /* BusinessTableViewCell.swift in Sources */,
 				42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */,
