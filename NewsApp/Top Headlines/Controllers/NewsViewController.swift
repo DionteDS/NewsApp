@@ -17,11 +17,11 @@ class NewsViewController: UIViewController {
     
     
     // Properties
-    let baseURLForTopHeadLines = "https://newsapi.org/v2/top-headlines"
-    var newsTopics: [[String: Any]] = [[String: Any]]()
-    var row = 0
+    private let baseURLForTopHeadLines = "https://newsapi.org/v2/top-headlines"
+    private var newsTopics: [[String: Any]] = [[String: Any]]()
+    private var row = 0
     
-    var refreshControl = UIRefreshControl()
+    private var refreshControl = UIRefreshControl()
     
 
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class NewsViewController: UIViewController {
         
     }
     
-    func setupNavBar() {
+    private func setupNavBar() {
         
         // Navigation bar setup
         navigationController?.navigationBar.barTintColor = UIColor.gray
@@ -59,7 +59,7 @@ class NewsViewController: UIViewController {
         
     }
     
-    func setupRefreshControl() {
+    private func setupRefreshControl() {
         
         // If user is on iOS version 10.0 add the refreshControl to the
         // newsTableView.refreshControl property
@@ -70,13 +70,13 @@ class NewsViewController: UIViewController {
             newsTableView.addSubview(refreshControl)
         }
         
-        refreshControl.addTarget(self, action: #selector(updateList(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
         refreshControl.tintColor = UIColor.red
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching news data", attributes: [NSAttributedString.Key.foregroundColor: UIColor.cyan])
         
     }
     
-    @objc func updateList(_ sender: Any) {
+    @objc private func updateList() {
         
         setQuery()
         refreshControl.endRefreshing()
@@ -85,7 +85,7 @@ class NewsViewController: UIViewController {
     
     //MARK: - Networking Functions
     
-    func setQuery() {
+    private func setQuery() {
         
         let params: [String: String] = ["country": "us", "apiKey": APIKEY, "pageSize": "10"]
         
@@ -93,7 +93,7 @@ class NewsViewController: UIViewController {
         
     }
     
-    func fetchData(url: String, parameters: [String: String]) {
+    private func fetchData(url: String, parameters: [String: String]) {
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
             

@@ -22,6 +22,8 @@ class EnterainmentViewController: UIViewController {
     
     private var row = 0
     
+    private var refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,38 @@ class EnterainmentViewController: UIViewController {
         
         setupNavBar()
         
+        setupRefreshControl()
+        
         // Create and register the custom collectionViewCell
         let nib = UINib(nibName: "EnterainmentCollectionViewCell", bundle: nil)
         enterainmentCollectionView.register(nib, forCellWithReuseIdentifier: "enterainmentCell")
         
         setupLayout()
+        
+        
+    }
+    
+    private func setupRefreshControl() {
+        
+        // If user is on iOS version 10.0 add the refreshControl to the
+        // newsTableView.refreshControl property
+        // Else add the refreshControl to the newsTableView SubView
+        if #available(iOS 10.0, *) {
+            enterainmentCollectionView.refreshControl = refreshControl
+        } else {
+            enterainmentCollectionView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
+        refreshControl.tintColor = UIColor.red
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching data", attributes: [NSAttributedString.Key.foregroundColor : UIColor.cyan])
+        
+    }
+    
+    @objc private func updateList() {
+        
+        setQuery(category: "entertainment")
+        refreshControl.endRefreshing()
         
     }
     

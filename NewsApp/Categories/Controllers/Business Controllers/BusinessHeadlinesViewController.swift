@@ -18,7 +18,10 @@ class BusinessHeadlinesViewController: UIViewController {
     private let baseURL = "https://newsapi.org/v2/top-headlines"
     
     private var businessHeadlines: [[String: Any]] = [[String: Any]]()
+    
     private var row = 0
+    
+    private var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +30,35 @@ class BusinessHeadlinesViewController: UIViewController {
         
         setupNavBar()
         
+        setupRefreshControl()
+        
         let nib = UINib(nibName: "BusinessTableViewCell", bundle: nil)
         businessTableView.register(nib, forCellReuseIdentifier: "businessCell")
         businessTableView.backgroundColor = UIColor.gray
         businessTableView.separatorStyle = .none
+        
+    }
+    
+    private func setupRefreshControl() {
+        
+        // If user is on iOS version 10.0 add the refreshControl to the
+        // newsTableView.refreshControl property
+        // Else add the refreshControl to the newsTableView SubView
+        if #available(iOS 10.0, *) {
+            businessTableView.refreshControl = refreshControl
+        } else {
+            businessTableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
+        refreshControl.tintColor = UIColor.red
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching data", attributes: [NSAttributedString.Key.foregroundColor : UIColor.cyan])
+    }
+    
+    @objc private func updateList() {
+        
+        setQuery(category: "business")
+        refreshControl.endRefreshing()
         
     }
     
