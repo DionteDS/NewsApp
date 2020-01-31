@@ -16,6 +16,8 @@ class SportsViewController: UIViewController {
     
     private var sportsNews: [[String: Any]] = [[String: Any]]()
     
+    private var layout = UICollectionViewFlowLayout()
+    
     private var row = 0
     
     private var refreshControl = UIRefreshControl()
@@ -27,6 +29,8 @@ class SportsViewController: UIViewController {
         sportsCollectionView.backgroundColor = UIColor.gray
 
         setNavbar()
+        
+        setupLayout()
         
         // Create and register the nib file
         let nib = UINib(nibName: "SportsCollectionViewCell", bundle: nil)
@@ -50,6 +54,22 @@ class SportsViewController: UIViewController {
         
     }
     
+    
+    // Setup the flow layout
+    private func setupLayout() {
+        
+        let collectionViewSizeWidth = sportsCollectionView.frame.size.width
+        let collectionViewSizeHeight = sportsCollectionView.frame.size.height
+        
+        layout.itemSize = CGSize(width: collectionViewSizeWidth - 92, height: collectionViewSizeHeight - 518)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        layout.scrollDirection = .vertical
+        
+        sportsCollectionView.setCollectionViewLayout(layout, animated: true)
+        
+    }
 
 }
 
