@@ -12,6 +12,7 @@
 		4200EC7723E4C7F0000145B7 /* TechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200EC7623E4C7F0000145B7 /* TechnologyViewController.swift */; };
 		4200EC7B23E4CA56000145B7 /* TechCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200EC7923E4CA56000145B7 /* TechCollectionViewCell.swift */; };
 		4200EC7C23E4CA56000145B7 /* TechCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4200EC7A23E4CA56000145B7 /* TechCollectionViewCell.xib */; };
+		4200EC7E23E4D247000145B7 /* TechnologyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200EC7D23E4D247000145B7 /* TechnologyInfoViewController.swift */; };
 		4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203A58D23E22B1F004032FE /* EnterainmentCollectionViewCell.swift */; };
 		4203A59023E22B1F004032FE /* EnterainmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4203A58E23E22B1F004032FE /* EnterainmentCollectionViewCell.xib */; };
 		4203A59223E24A0C004032FE /* EnterainmentWebVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203A59123E24A0C004032FE /* EnterainmentWebVCViewController.swift */; };
@@ -57,6 +58,7 @@
 		4200EC7623E4C7F0000145B7 /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
 		4200EC7923E4CA56000145B7 /* TechCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCollectionViewCell.swift; sourceTree = "<group>"; };
 		4200EC7A23E4CA56000145B7 /* TechCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TechCollectionViewCell.xib; sourceTree = "<group>"; };
+		4200EC7D23E4D247000145B7 /* TechnologyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyInfoViewController.swift; sourceTree = "<group>"; };
 		4203A58D23E22B1F004032FE /* EnterainmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterainmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		4203A58E23E22B1F004032FE /* EnterainmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterainmentCollectionViewCell.xib; sourceTree = "<group>"; };
 		4203A59123E24A0C004032FE /* EnterainmentWebVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterainmentWebVCViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				4200EC7623E4C7F0000145B7 /* TechnologyViewController.swift */,
+				4200EC7D23E4D247000145B7 /* TechnologyInfoViewController.swift */,
 			);
 			path = "Technology Controllers";
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
 				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */,
+				4200EC7E23E4D247000145B7 /* TechnologyInfoViewController.swift in Sources */,
 				42562FB723E3603500A5A405 /* ScienceCollectionViewCell.swift in Sources */,
 				4227658823E220EE00739C7F /* EnterainmentViewController.swift in Sources */,
 				420A8A6523DD4D9B007913F3 /* AppDelegate.swift in Sources */,
