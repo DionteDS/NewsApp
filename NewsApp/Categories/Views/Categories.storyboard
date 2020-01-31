@@ -68,6 +68,7 @@
                         <segue destination="Kxb-Pb-FPw" kind="show" identifier="goToHealthVc" id="E3u-aB-WQB"/>
                         <segue destination="taw-Ht-qIl" kind="show" identifier="goToScienceVC" id="GmS-OP-JHU"/>
                         <segue destination="ySq-DV-JG3" kind="show" identifier="goToSportVC" id="yrF-Xk-wXB"/>
+                        <segue destination="NkT-DG-haC" kind="show" identifier="goToTechnologyVC" id="gSe-cA-mkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb1-d4-LkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -231,6 +232,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHC-0M-EId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1972" y="2354"/>
+        </scene>
+        <!--Technology View Controller-->
+        <scene sceneID="wCR-mj-1Zl">
+            <objects>
+                <viewController id="NkT-DG-haC" customClass="TechnologyViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K8h-gm-eXz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="khB-HC-ukJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IcO-zV-AhD">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="WUW-bL-4ke">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WAh-9q-O5t">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="NkT-DG-haC" id="4Y5-h2-F5F"/>
+                                    <outlet property="delegate" destination="NkT-DG-haC" id="MNn-bc-nFZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="khB-HC-ukJ" firstAttribute="top" secondItem="VGk-pT-XtY" secondAttribute="top" id="5tf-zB-VjQ"/>
+                            <constraint firstItem="VGk-pT-XtY" firstAttribute="trailing" secondItem="khB-HC-ukJ" secondAttribute="trailing" id="mQy-EY-ewA"/>
+                            <constraint firstItem="VGk-pT-XtY" firstAttribute="bottom" secondItem="khB-HC-ukJ" secondAttribute="bottom" id="r4f-Si-NyF"/>
+                            <constraint firstItem="khB-HC-ukJ" firstAttribute="leading" secondItem="VGk-pT-XtY" secondAttribute="leading" id="zi6-JF-CLW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VGk-pT-XtY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ToA-KJ-UWz"/>
+                    <connections>
+                        <outlet property="techCollectionView" destination="khB-HC-ukJ" id="uPF-Hh-QmB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQj-Ss-628" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="3139"/>
         </scene>
         <!--Sports Info View Controller-->
         <scene sceneID="cCv-zL-cLG">
