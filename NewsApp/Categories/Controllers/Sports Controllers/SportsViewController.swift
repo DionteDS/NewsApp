@@ -14,6 +14,8 @@ class SportsViewController: UIViewController {
     
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     
+    private var baseURL = "https://newsapi.org/v2/top-headlines"
+    
     private var sportsNews: [[String: Any]] = [[String: Any]]()
     
     private var layout = UICollectionViewFlowLayout()
@@ -70,6 +72,33 @@ class SportsViewController: UIViewController {
         sportsCollectionView.setCollectionViewLayout(layout, animated: true)
         
     }
+    
+    //MARK: - Network Calls
+    
+    // Set the search query
+    public func setQuery(category: String) {
+        
+        let params: [String: String] = ["apiKey": APIKEY, "category": category, "country": "us", "pageSize": "10"]
+        
+        fetchData(url: baseURL, parameters: params)
+    }
+    
+    // Fetch the data
+    private func fetchData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            
+            if let responseValue = response.result.value as! [String: Any]? {
+                if let sportsResponseNews = responseValue["articles"] as! [[String: Any]]? {
+                    self.sportsNews = sportsResponseNews
+                    self.sportsCollectionView.reloadData()
+                }
+            } else {
+                print(response.error!)
+            }
+        }
+        
+    }
 
 }
 
@@ -78,7 +107,7 @@ class SportsViewController: UIViewController {
 extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return sportsNews.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,8 +119,24 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.titleLabel.textColor = UIColor.white
         cell.sourceLabel.textColor = UIColor.white
         
-        cell.titleLabel.text = "Title"
-        cell.sourceLabel.text = "Source"
+        let sportTopics = sportsNews[indexPath.row]
+        
+        let source = sportTopics["source"] as! [String: Any]
+        
+        // Grab the image url
+        if let imageURL = sportTopics["urlToImage"] as? String {
+            Alamofire.request(imageURL).responseImage { (response) in
+                if let image = response.result.value {
+                    let size = CGSize(width: 322, height: 128)
+                    let scaledImage = image.af_imageAspectScaled(toFill: size)
+                    
+                    // Display the contents on the main thread
+                    cell.titleLabel.text = (sportTopics["title"] as? String ?? "")
+                    cell.sourceLabel.text = (source["name"] as? String ?? "")
+                    cell.imgView.image = scaledImage
+                }
+            }
+        }
         
         return cell
         

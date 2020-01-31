@@ -150,6 +150,7 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
         } else if segue.identifier == "goToSportVC" {
             let controller = segue.destination as! SportsViewController
             
+            controller.setQuery(category: categories[row])
         }
         
     }
