@@ -108,7 +108,7 @@ class TechnologyViewController: UIViewController {
 extension TechnologyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return techNews.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -120,8 +120,28 @@ extension TechnologyViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.titleLabel.textColor = UIColor.white
         cell.sourceLabel.textColor = UIColor.white
         
-        cell.titleLabel.text = "Title"
-        cell.sourceLabel.text = "Source"
+        // Hold each article
+        let articles = techNews[indexPath.row]
+        
+        // Grab the source to each article
+        let source = articles["source"] as! [String: Any]
+        
+        // Grab the image url
+        if let imageURL = articles["urlToImage"] as? String {
+            Alamofire.request(imageURL).responseImage { (response) in
+                if let image = response.result.value {
+                    let size = CGSize(width: 322, height: 128)
+                    let scaledImage = image.af_imageAspectScaled(toFill: size)
+                    
+                    // Display the contents on the main thread
+                    DispatchQueue.main.async {
+                        cell.titleLabel.text = (articles["title"] as? String ?? "")
+                        cell.sourceLabel.text = (source["name"] as? String ?? "")
+                        cell.imgView.image = scaledImage
+                    }
+                }
+            }
+        }
         
         return cell
         
