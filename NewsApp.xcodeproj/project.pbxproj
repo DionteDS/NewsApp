@@ -17,6 +17,8 @@
 		420A8A6E23DD4D9C007913F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6D23DD4D9C007913F3 /* Assets.xcassets */; };
 		420A8A7123DD4D9C007913F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6F23DD4D9C007913F3 /* LaunchScreen.storyboard */; };
 		42137CB423E4B06100D3646A /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42137CB323E4B06100D3646A /* SportsViewController.swift */; };
+		42137CB823E4B31300D3646A /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42137CB623E4B31300D3646A /* SportsCollectionViewCell.swift */; };
+		42137CB923E4B31300D3646A /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42137CB723E4B31300D3646A /* SportsCollectionViewCell.xib */; };
 		42140A7023DE90990082B35A /* Headlines.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42140A6F23DE90990082B35A /* Headlines.storyboard */; };
 		42140A7623DE95CF0082B35A /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42140A7523DE95CF0082B35A /* Categories.storyboard */; };
 		42140A7923DE99510082B35A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140A7823DE99510082B35A /* CategoriesViewController.swift */; };
@@ -58,6 +60,8 @@
 		420A8A7023DD4D9C007913F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		420A8A7223DD4D9C007913F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42137CB323E4B06100D3646A /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
+		42137CB623E4B31300D3646A /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		42137CB723E4B31300D3646A /* SportsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsCollectionViewCell.xib; sourceTree = "<group>"; };
 		42140A6F23DE90990082B35A /* Headlines.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Headlines.storyboard; sourceTree = "<group>"; };
 		42140A7523DE95CF0082B35A /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		42140A7823DE99510082B35A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 			path = "Sports Controllers";
 			sourceTree = "<group>";
 		};
+		42137CB523E4B2FE00D3646A /* Custom Sports Cells */ = {
+			isa = PBXGroup;
+			children = (
+				42137CB623E4B31300D3646A /* SportsCollectionViewCell.swift */,
+				42137CB723E4B31300D3646A /* SportsCollectionViewCell.xib */,
+			);
+			path = "Custom Sports Cells";
+			sourceTree = "<group>";
+		};
 		42140A6E23DE90800082B35A /* Top Headlines */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +267,7 @@
 		42140A7A23DE9A4C0082B35A /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				42137CB523E4B2FE00D3646A /* Custom Sports Cells */,
 				42137CB023E4B00C00D3646A /* Custom Sport Cells */,
 				42137CAF23E4AF4500D3646A /* Custom Category Cells */,
 				42562FB423E3601900A5A405 /* Custom Science Cells */,
@@ -414,6 +428,7 @@
 				420A8A6C23DD4D9B007913F3 /* Main.storyboard in Resources */,
 				42562FB823E3603500A5A405 /* ScienceCollectionViewCell.xib in Resources */,
 				42140A7E23DE9A650082B35A /* CustomCollectionViewCell.xib in Resources */,
+				42137CB923E4B31300D3646A /* SportsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +500,7 @@
 				4243DA9B23E28A70004A2734 /* HealthCollectionViewCell.swift in Sources */,
 				42140A8323DEBA910082B35A /* BusinessTableViewCell.swift in Sources */,
 				42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */,
+				42137CB823E4B31300D3646A /* SportsCollectionViewCell.swift in Sources */,
 				420A8A6723DD4D9B007913F3 /* SceneDelegate.swift in Sources */,
 				42140A7923DE99510082B35A /* CategoriesViewController.swift in Sources */,
 				42137CB423E4B06100D3646A /* SportsViewController.swift in Sources */,

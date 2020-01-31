@@ -22,8 +22,15 @@ class SportsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.gray
+        sportsCollectionView.backgroundColor = UIColor.gray
 
         setNavbar()
+        
+        // Create and register the nib file
+        let nib = UINib(nibName: "SportsCollectionViewCell", bundle: nil)
+        sportsCollectionView.register(nib, forCellWithReuseIdentifier: "sportsCell")
         
     }
     
@@ -46,6 +53,8 @@ class SportsViewController: UIViewController {
 
 }
 
+//MARK: - CollectionView Delegate and DataSource
+
 extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,7 +63,15 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportsCell", for: indexPath) as! SportsCollectionViewCell
+        
+        cell.designBorderBackground()
+        
+        cell.titleLabel.textColor = UIColor.white
+        cell.sourceLabel.textColor = UIColor.white
+        
+        cell.titleLabel.text = "Title"
+        cell.sourceLabel.text = "Source"
         
         return cell
         
