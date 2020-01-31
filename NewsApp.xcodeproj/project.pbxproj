@@ -16,6 +16,7 @@
 		420A8A6C23DD4D9B007913F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6A23DD4D9B007913F3 /* Main.storyboard */; };
 		420A8A6E23DD4D9C007913F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6D23DD4D9C007913F3 /* Assets.xcassets */; };
 		420A8A7123DD4D9C007913F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420A8A6F23DD4D9C007913F3 /* LaunchScreen.storyboard */; };
+		42137CB423E4B06100D3646A /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42137CB323E4B06100D3646A /* SportsViewController.swift */; };
 		42140A7023DE90990082B35A /* Headlines.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42140A6F23DE90990082B35A /* Headlines.storyboard */; };
 		42140A7623DE95CF0082B35A /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42140A7523DE95CF0082B35A /* Categories.storyboard */; };
 		42140A7923DE99510082B35A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42140A7823DE99510082B35A /* CategoriesViewController.swift */; };
@@ -56,6 +57,7 @@
 		420A8A6D23DD4D9C007913F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		420A8A7023DD4D9C007913F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		420A8A7223DD4D9C007913F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42137CB323E4B06100D3646A /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
 		42140A6F23DE90990082B35A /* Headlines.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Headlines.storyboard; sourceTree = "<group>"; };
 		42140A7523DE95CF0082B35A /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		42140A7823DE99510082B35A /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,39 @@
 			path = NewsApp;
 			sourceTree = "<group>";
 		};
+		42137CAF23E4AF4500D3646A /* Custom Category Cells */ = {
+			isa = PBXGroup;
+			children = (
+				42140A7B23DE9A650082B35A /* CustomCollectionViewCell.swift */,
+				42140A7C23DE9A650082B35A /* CustomCollectionViewCell.xib */,
+			);
+			path = "Custom Category Cells";
+			sourceTree = "<group>";
+		};
+		42137CB023E4B00C00D3646A /* Custom Sport Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Sport Cells";
+			sourceTree = "<group>";
+		};
+		42137CB123E4B03E00D3646A /* Science Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42562FB223E35EF900A5A405 /* ScienceViewController.swift */,
+				42562FB923E3727300A5A405 /* ScienceInfoViewController.swift */,
+			);
+			path = "Science Controllers";
+			sourceTree = "<group>";
+		};
+		42137CB223E4B05100D3646A /* Sports Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42137CB323E4B06100D3646A /* SportsViewController.swift */,
+			);
+			path = "Sports Controllers";
+			sourceTree = "<group>";
+		};
 		42140A6E23DE90800082B35A /* Top Headlines */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +224,7 @@
 			children = (
 				42521EA323E0D96700BDA595 /* Extenstions */,
 				42140A7A23DE9A4C0082B35A /* Custom Cells */,
-				42140A7723DE99430082B35A /* Science Controllers */,
+				42140A7723DE99430082B35A /* Controllers */,
 				42140A7423DE95BE0082B35A /* Views */,
 			);
 			path = Categories;
@@ -203,28 +238,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		42140A7723DE99430082B35A /* Science Controllers */ = {
+		42140A7723DE99430082B35A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				42562FB223E35EF900A5A405 /* ScienceViewController.swift */,
-				42562FB923E3727300A5A405 /* ScienceInfoViewController.swift */,
+				42137CB223E4B05100D3646A /* Sports Controllers */,
+				42137CB123E4B03E00D3646A /* Science Controllers */,
 				4243DA9523E28901004A2734 /* Health Controllers */,
 				4227658623E220DB00739C7F /* Enterainment Controllers */,
 				4227658523E220C100739C7F /* Business Controllers */,
 				42140A7823DE99510082B35A /* CategoriesViewController.swift */,
 			);
-			path = "Science Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		42140A7A23DE9A4C0082B35A /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				42137CB023E4B00C00D3646A /* Custom Sport Cells */,
+				42137CAF23E4AF4500D3646A /* Custom Category Cells */,
 				42562FB423E3601900A5A405 /* Custom Science Cells */,
 				4243DA9823E28A56004A2734 /* Custom Health Cells */,
 				4203A58C23E22AF9004032FE /* Custom Enterainment Cells */,
 				4203A58B23E22AE3004032FE /* Custom Business Cell */,
-				42140A7B23DE9A650082B35A /* CustomCollectionViewCell.swift */,
-				42140A7C23DE9A650082B35A /* CustomCollectionViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -452,6 +487,7 @@
 				42BED27B23DD87B7004C03B5 /* NewsInfoViewController.swift in Sources */,
 				420A8A6723DD4D9B007913F3 /* SceneDelegate.swift in Sources */,
 				42140A7923DE99510082B35A /* CategoriesViewController.swift in Sources */,
+				42137CB423E4B06100D3646A /* SportsViewController.swift in Sources */,
 				424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -138,9 +138,6 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         // Get the source name
         let eachSource = eachArticle["source"] as! [String: Any]
         
-        // Display the title and source in the cell labels
-        cell.newsTitle.text = (eachArticle["title"] as? String ?? "")
-        cell.newsSource.text = (eachSource["name"] as? String ?? "")
         
         // Get the image for the article
         if let imageURL = eachArticle["urlToImage"] as? String {
@@ -152,6 +149,9 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
                     let scaledImage = image.af_imageAspectScaled(toFill: size)
                     // Set image on main thread
                     DispatchQueue.main.async {
+                        // Display the title and source in the cell labels
+                        cell.newsTitle.text = (eachArticle["title"] as? String ?? "")
+                        cell.newsSource.text = (eachSource["name"] as? String ?? "")
                         cell.newsImg.image = scaledImage
                     }
                 } else {
