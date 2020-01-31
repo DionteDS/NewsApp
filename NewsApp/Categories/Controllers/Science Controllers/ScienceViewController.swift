@@ -100,6 +100,7 @@ class ScienceViewController: UIViewController {
         scienceCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
+    // Setup the refresh control
     private func setupRefreshControl() {
         
         // If user is on iOS version 10.0 add the refreshControl to the

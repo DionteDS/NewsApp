@@ -32,6 +32,8 @@ class SportsViewController: UIViewController {
 
         setNavbar()
         
+        setupRefreshControl()
+        
         setupLayout()
         
         // Create and register the nib file
@@ -70,6 +72,31 @@ class SportsViewController: UIViewController {
         layout.scrollDirection = .vertical
         
         sportsCollectionView.setCollectionViewLayout(layout, animated: true)
+        
+    }
+    
+    // Setup the refreshControl
+    private func setupRefreshControl() {
+        
+        // If user is on iOS version 10.0 add the refreshControl to the
+        // newsTableView.refreshControl property
+        // Else add the refreshControl to the newsTableView SubView
+        if #available(iOS 10.0, *) {
+            sportsCollectionView.refreshControl = refreshControl
+        } else {
+            sportsCollectionView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(updateList), for: .valueChanged)
+        refreshControl.tintColor = .red
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching data", attributes: [NSAttributedString.Key.foregroundColor : UIColor.cyan])
+        
+    }
+    
+    @objc private func updateList() {
+        
+        setQuery(category: "sports")
+        refreshControl.endRefreshing()
         
     }
     
@@ -142,5 +169,30 @@ extension SportsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
     }
     
+    // Select a cell to segue too
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let rowIndex = collectionView.indexPathsForSelectedItems?.first {
+            row = rowIndex.row
+        }
+        
+        performSegue(withIdentifier: "goToSportsWebViewVC", sender: self)
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+    }
+    
+    // Preapre the data to be sent over
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSportsWebViewVC" {
+            let controller = segue.destination as! SportsInfoViewController
+            
+            let article = sportsNews[row]
+            
+            let url = article["url"] as? String ?? ""
+            
+            controller.webURLString = url
+        }
+    }
     
 }
