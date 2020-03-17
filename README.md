@@ -7,7 +7,7 @@ There is also six different categories of news that you can also look at.
 
 The steps below will show you how to download and run the project.
 
-You will also need to sign up on the News API website for an API Key
+You will also need to sign up on the News API website for an API Key.
 
 ### Prerequisites
 
