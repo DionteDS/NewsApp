@@ -24,3 +24,6 @@ The steps below will show you how to download and run the project
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 * [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
 * [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+
+## Source
+* [NewsApi](https://newsapi.org/)
