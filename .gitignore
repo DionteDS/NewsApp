@@ -6,7 +6,6 @@
 xcuserdata/
 
 .DS_Store
-
 NewsApp/Keys.swift
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
