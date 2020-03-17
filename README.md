@@ -5,7 +5,9 @@ There is also six different categories of news that you can also look at.
 
 ## Getting Started
 
-The steps below will show you how to download and run the project
+The steps below will show you how to download and run the project.
+
+You will also need to sign up on the News API website for an API Key.
 
 ### Prerequisites
 
@@ -27,3 +29,7 @@ The steps below will show you how to download and run the project
 
 ## Source
 * [NewsApi](https://newsapi.org/)
+
+## Errors
+
+If you see the Keys.swift file in the Xcode navigator panel delete it.
