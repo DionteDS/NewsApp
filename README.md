@@ -19,3 +19,8 @@ The steps below will show you how to download and run the project
 * Open the folder and click on the NewsApp.xcworkspace file
 * Once in Xcode just click on the run button to run the project
 
+## Pods
+
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
