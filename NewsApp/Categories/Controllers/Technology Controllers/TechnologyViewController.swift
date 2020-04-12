@@ -14,6 +14,8 @@ class TechnologyViewController: UIViewController {
     
     @IBOutlet weak var techCollectionView: UICollectionView!
     
+//    private let APIKEY = "Place your api key here"
+    
     private var baseURL = "https://newsapi.org/v2/top-headlines"
     
     private var techNews: [[String: Any]] = [[String: Any]]()

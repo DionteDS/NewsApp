@@ -39,7 +39,6 @@
 		424A02D723DD6094009A3815 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D623DD6094009A3815 /* NewsViewController.swift */; };
 		424A02DB23DD627C009A3815 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02D923DD627C009A3815 /* NewsTableViewCell.swift */; };
 		424A02DC23DD627C009A3815 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */; };
-		424A02DE23DD670A009A3815 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A02DD23DD670A009A3815 /* Keys.swift */; };
 		42521EA223E0D96400BDA595 /* CategoryCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */; };
 		42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */; };
 		42521EA923E122E600BDA595 /* BusinessInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42521EA823E122E600BDA595 /* BusinessInfoViewController.swift */; };
@@ -87,7 +86,6 @@
 		424A02D623DD6094009A3815 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		424A02D923DD627C009A3815 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		424A02DA23DD627C009A3815 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
-		424A02DD23DD670A009A3815 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		42521EA123E0D96400BDA595 /* CategoryCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryCell+Design.swift"; sourceTree = "<group>"; };
 		42521EA623E0E50F00BDA595 /* TableViewCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Design.swift"; sourceTree = "<group>"; };
 		42521EA823E122E600BDA595 /* BusinessInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoViewController.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				420A8A6D23DD4D9C007913F3 /* Assets.xcassets */,
 				420A8A6F23DD4D9C007913F3 /* LaunchScreen.storyboard */,
 				420A8A7223DD4D9C007913F3 /* Info.plist */,
-				424A02DD23DD670A009A3815 /* Keys.swift */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -493,7 +490,6 @@
 				42521EA923E122E600BDA595 /* BusinessInfoViewController.swift in Sources */,
 				42562FBA23E3727300A5A405 /* ScienceInfoViewController.swift in Sources */,
 				42521EA723E0E50F00BDA595 /* TableViewCell+Design.swift in Sources */,
-				424A02DE23DD670A009A3815 /* Keys.swift in Sources */,
 				4203A58F23E22B1F004032FE /* EnterainmentCollectionViewCell.swift in Sources */,
 				4200EC7E23E4D247000145B7 /* TechnologyInfoViewController.swift in Sources */,
 				42562FB723E3603500A5A405 /* ScienceCollectionViewCell.swift in Sources */,

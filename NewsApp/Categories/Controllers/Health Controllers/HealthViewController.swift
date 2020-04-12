@@ -14,6 +14,8 @@ class HealthViewController: UIViewController {
     
     @IBOutlet weak var healthCollectionView: UICollectionView!
     
+//    private let APIKEY = "Place your api key here"
+    
     private let baseURL = "https://newsapi.org/v2/top-headlines"
     
     private var healthNews: [[String: Any]] = [[String: Any]]()

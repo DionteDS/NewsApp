@@ -20,6 +20,7 @@ class NewsViewController: UIViewController {
     private let baseURLForTopHeadLines = "https://newsapi.org/v2/top-headlines"
     private var newsTopics: [[String: Any]] = [[String: Any]]()
     private var row = 0
+//    private let APIKEY = "Place your api key here"
     
     private var refreshControl = UIRefreshControl()
     
