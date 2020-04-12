@@ -29,7 +29,3 @@ You will also need to sign up on the News API website for an API Key.
 
 ## Source
 * [NewsApi](https://newsapi.org/)
-
-## Errors
-
-If you see the Keys.swift file in the Xcode navigator panel delete it.
